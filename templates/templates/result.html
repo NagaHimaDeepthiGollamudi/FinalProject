@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Result</title>
+    <style>
+      body {
+        background: linear-gradient(to right, #f5f7fa, #c3cfe2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        padding: 20px;
+      }
+
+      .result-form {
+        max-width: 500px;
+        background-color: #ffffff;
+        border-radius: 5px;
+        padding: 40px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        border: 1px solid #cccccc;
+      }
+
+      .result-form h1 {
+        text-align: center;
+        margin-bottom: 40px;
+        font-size: 32px;
+        color: #333333;
+        /* Add color to the heading */
+        color: #ff5733;
+      }
+
+      .result-form p {
+        text-align: center;
+        font-size: 24px;
+        color: #666666;
+        /* Add color to the paragraph */
+        color: #337ab7;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="result-form">
+      <h1>Prediction Result</h1>
+      <p>Predicted label: {{ predicted_label }}</p>
+    </div>
+  </body>
+</html>

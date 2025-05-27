@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive E-commerce Product Page</title>
+
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #4b5320; /* Dark Olive for Title */
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.product-item {
+    background-color: #fffbe8; /* Light Earthy Beige */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    border: 2px solid #8b5a2b; /* Brown Border */
+}
+
+.product-item:hover {
+    transform: translateY(-5px);
+}
+
+.product-image {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-bottom: 3px solid #4b5320; /* Dark Olive Border */
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.tag {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 5px 10px;
+    background-color: #ffc107; /* Yellow for tags */
+    color: white;
+    font-size: 12px;
+    text-transform: uppercase;
+    border-radius: 5px;
+}
+
+.new {
+    background-color: #28a745; /* Green for New Products */
+}
+
+.bestseller {
+    background-color: #ffcc00; /* Yellow for Best Seller */
+}
+
+.sale {
+    background-color: #dc3545; /* Red for Sale */
+}
+
+.product-details {
+    padding: 20px;
+    text-align: center;
+    background-color: #f9f5ec; /* Light Beige Background */
+}
+
+.product-details h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #8b5a2b; /* Brown for Product Names */
+}
+
+.price {
+    font-size: 16px;
+    color: #4b5320; /* Dark Olive for Price */
+    margin-bottom: 10px;
+}
+
+.description {
+    font-size: 14px;
+    color: #555; /* Dark Gray for Description */
+}
+
+.farmer-name {
+    font-size: 14px;
+    color: #8b5a2b; /* Brown for Farmer Name */
+    margin-bottom: 5px;
+}
+
+.phone-btn {
+    display: inline-block;
+    background-color: #4b5320; /* Dark Olive for Buttons */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 10px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.phone-btn:hover {
+    background-color: #3a421a; /* Darker Olive on Hover */
+}
+
+</style>
+
+</head>
+<body>
+    <div class="container">
+        <h1>Our Farmers' Products</h1>
+        <div class="product-grid">
+            <!-- Product Item 1 -->
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="https://image.freepik.com/free-photo/brown-paddy-rice-seed-hemp-sacks-burlap-bag_41923-100.jpg" alt="Product 1">
+                    <span class="tag new">New</span>
+                </div>
+                <div class="product-details">
+                    <h2>Organic Rice</h2>
+                    <p class="price">$49.99 per kg</p>
+                    <p class="description">High-quality organic rice directly from the farm.</p>
+                    <p class="farmer-name">Farmer: Ramesh Kumar</p>
+                    <a href="tel:+919876543210" class="phone-btn">Call Farmer</a>
+                </div>
+            </div>
+
+            <!-- Product Item 2 -->
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="https://tse4.mm.bing.net/th?id=OIP.SQlUdNh3Rw8J6QV6WXQgvAHaEK&pid=Api&P=0&h=180" alt="Product 2">
+                    <span class="tag bestseller">Best Seller</span>
+                </div>
+                <div class="product-details">
+                    <h2>Fresh Tomatoes</h2>
+                    <p class="price">$2.99 per kg</p>
+                    <p class="description">Farm-fresh tomatoes packed with flavor.</p>
+                    <p class="farmer-name">Farmer: Suresh Patel</p>
+                    <a href="tel:+919874563210" class="phone-btn">Call Farmer</a>
+                </div>
+            </div>
+
+            <!-- Product Item 3 -->
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="https://tse4.mm.bing.net/th?id=OIP.xRIpRKatZ81iqd-GcZCiKwHaER&pid=Api&P=0&h=180" alt="Product 3">
+                    <span class="tag sale">Sale</span>
+                </div>
+                <div class="product-details">
+                    <h2>Golden Wheat</h2>
+                    <p class="price">$39.99 per 50kg bag</p>
+                    <p class="description">Premium quality wheat at discounted rates.</p>
+                    <p class="farmer-name">Farmer: Kiran Desai</p>
+                    <a href="tel:+919912345678" class="phone-btn">Call Farmer</a>
+                </div>
+            </div>
+        </div><br><br><br><br>
+        <div class="product-grid">
+            <!-- Product Item 1 -->
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="https://media.istockphoto.com/id/887460716/photo/orange-stack.jpg?s=170667a&w=0&k=20&c=htHtOjtMG80Jrs_7W4tLaBjWYllMZnz-Ns4c4XSuKeo=" alt="Product 1">
+                    <span class="tag new">New</span>
+                </div>
+                <div class="product-details">
+                    <h2>Oranges</h2>
+                    <p class="price">$29.99 per dozen</p>
+                    <p class="description">Freshly picked, juicy oranges.</p>
+                    <p class="farmer-name">Farmer: Ramesh Kumar</p>
+                    <a href="tel:+919876543210" class="phone-btn">Call Farmer</a>
+                </div>
+            </div>
+
+            <!-- Product Item 2 -->
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="https://tse2.mm.bing.net/th?id=OIP.2ITveAc32lX2qyC63jjuhgHaE8&pid=Api&P=0&h=180" alt="Product 2">
+                    <span class="tag bestseller">Best Seller</span>
+                </div>
+                <div class="product-details">
+                    <h2>Fresh Mangoes</h2>
+                    <p class="price">$19.99 per kg</p>
+                    <p class="description">Sweet and ripe mangoes from the farm.</p>
+                    <p class="farmer-name">Farmer: Suresh Patel</p>
+                    <a href="tel:+919874563210" class="phone-btn">Call Farmer</a>
+                </div>
+            </div>
+
+            <!-- Product Item 3 -->
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="https://i1.wp.com/www.theproducenerd.com/wp-content/uploads/2017/09/viet-nam-1093016_1920.jpg?fit=1920%2C1440&ssl=1" alt="Product 3">
+                    <span class="tag sale">Sale</span>
+                </div>
+                <div class="product-details">
+                    <h2>Golden Wheat</h2>
+                    <p class="price">$39.99 per 50kg bag</p>
+                    <p class="description">Premium quality wheat at discounted rates.</p>
+                    <p class="farmer-name">Farmer: Kiran Desai</p>
+                    <a href="tel:+919912345678" class="phone-btn">Call Farmer</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

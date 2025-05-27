@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Agriconnect.com</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+<!-- Link to vendor CSS files -->
+<link href="{{ url_for('static', filename='vendor/aos/aos.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='vendor/remixicon/remixicon.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+
+
+  <!-- Link to the CSS file -->
+<link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <h1 class="logo"><a href="index.html">Agriconnect</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="{{ url_for('index') }}">Home</a></li>
+          <li><a class="nav-link scrollto" href="{{ url_for('about') }}">About</a></li>
+          <li><a class="nav-link scrollto" href="{{ url_for('services') }}">Services</a></li>
+          <li><a class="nav-link scrollto" href="{{ url_for('contact') }}">Contact</a></li>
+          <li><a class="getstarted scrollto" href="{{ url_for('signin') }}">Signin</a></li> 
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div class="hero-container" data-aos="fade-up" data-aos-delay="150">
+      <h1>Plant. Grow.</h1>
+      <h2>When the hands of farmers are equipped with technology, they become the architects of a sustainable and bountiful future</h2>
+      <div class="d-flex">
+        <a href="{{ url_for('farmer') }}" class="btn-get-started scrollto">Get Started</a>
+      </div>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Boxes Section ======= -->
+    <section id="about-boxes" class="about-boxes">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class="card">
+              <img src="{{ url_for('static', filename='img/about-boxes-1.jpg') }}" class="card-img-top" alt="...">
+              <div class="card-icon">
+                <i class="ri-brush-4-line"></i>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title"><a href="">Our Mission</a></h5>
+                <p class="card-text">Our mission is to seamlessly integrate crop health monitoring and crop demand forecasting, leveraging cutting-edge technology and data analytics, to empower farmers with actionable insights for optimized decision-making, increased yields, and meeting market demands efficiently and sustainably</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+            <div class="card">
+              <img src="{{ url_for('static', filename='img/about-boxes-2.jpg') }}" class="card-img-top" alt="...">
+              <div class="card-icon">
+                <i class="ri-calendar-check-line"></i>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title"><a href="">Our Plan</a></h5>
+                <p class="card-text">Develop advanced analytics algorithms and machine learning models to analyze the collected data, providing farmers with actionable insights on crop health status, disease detection, yield prediction, and demand forecasting. </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+            <div class="card">
+              <img src="{{ url_for('static', filename='img/about-boxes-3.jpg') }}" class="card-img-top" alt="...">
+              <div class="card-icon">
+                <i class="ri-movie-2-line"></i>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title"><a href="">Our Vision</a></h5>
+                <p class="card-text">Our vision is to create a future where farmers have real-time visibility into crop health and market demand, enabling them to make data-driven decisions for sustainable agriculture and maximize profitability</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Boxes Section -->
+
+    
+
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Services</h2>
+          <p>Check our Services</p>
+        </div>
+
+        <div class="row" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-md-6">
+            <div class="icon-box">
+              <i class="bi bi-laptop"></i>
+              <h4><a href="#">Crop Health Monitoring</a></h4>
+              <p>By harnessing the potential of technology, crop health monitoring emerges as a transformative force, enabling farmers to proactively detect and address issues, ensuring healthier and more resilient crops</p>
+            </div>
+          </div>
+          <div class="col-md-6 mt-4 mt-md-0">
+            <div class="icon-box">
+              <i class="bi bi-bar-chart"></i>
+              <h4><a href="#">Crop Demand Forecasting</a></h4>
+              <p>empower farmers with advanced technologies and predictive analytics, allowing them to proactively monitor crop health, detect potential issues, and anticipate market trends to meet consumer demand effectively.</p>
+            </div>
+          </div>
+          <div class="col-md-6 mt-4 mt-md-0">
+            <div class="icon-box">
+              <i class="bi bi-brightness-high"></i>
+              <h4><a href="#">Connect Buyer to Framer</a></h4>
+              <p>Our goal is to bridge the gap between buyers and farmers by establishing a direct connection through our user-friendly website, fostering transparency, trust, and mutually beneficial relationships</p>
+            </div>
+          </div>
+          <div class="col-md-6 mt-4 mt-md-0">
+            <div class="icon-box">
+              <i class="bi bi-brightness-high"></i>
+              <h4><a href="#">Pesticide Prediction</a></h4>
+              <p>Our website revolutionizes pesticide management by leveraging disease identification from crop health monitoring to provide accurate and timely pesticide predictions</p>
+            </div>
+          </div>
+          <div class="col-md-6 mt-4 mt-md-0">
+            <div class="icon-box">
+              <i class="bi bi-briefcase"></i>
+              <h4><a href="#">New Technology Updates in Framing</a></h4>
+              <p>Our website serves as a dynamic hub for showcasing the latest advancements in agricultural technology, empowering farmers with knowledge and access to cutting-edge tools</p>
+            </div>
+          </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+    
+
+   
+
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container" data-aos="fade-up"">
+
+    <div class=" section-title">
+        <h2>Contact</h2>
+        <p>Contact Us</p>
+      </div>
+
+      <div class="row">
+
+        <div class="col-lg-6">
+
+          <div class="row">
+            <div class="col-md-12">
+              <div class="info-box">
+                <i class="bx bx-map"></i>
+                <h3>Our Address</h3>
+                <p>Vijayawada,Ap</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="info-box mt-4">
+                <i class="bx bx-envelope"></i>
+                <h3>Email Us</h3>
+                <p>info@example.com<br>contact@example.com</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="info-box mt-4">
+                <i class="bx bx-phone-call"></i>
+                <h3>Call Us</h3>
+                <p>+1 5589 55488 55<br>+1 6678 254445 41</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-lg-6 mt-4 mt-lg-0">
+          <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <div class="row">
+              <div class="col-md-6 form-group">
+                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+              </div>
+              <div class="col-md-6 form-group mt-3 mt-md-0">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+              </div>
+            </div>
+            <div class="form-group mt-3">
+              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+            </div>
+            <div class="form-group mt-3">
+              <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+            </div>
+            <div class="my-3">
+              <div class="loading">Loading</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Your message has been sent. Thank you!</div>
+            </div>
+            <div class="text-center"><button type="submit">Send Message</button></div>
+          </form>
+        </div>
+
+      </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-info">
+              <h3>FramerFriend</h3>
+              <p>
+                vijayawada <br>
+                Ap,India<br><br>
+                <strong>Phone:</strong> +1 5589 55488 55<br>
+                <strong>Email:</strong> info@example.com<br>
+              </p>
+              <div class="social-links mt-3">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Our Newsletter</h4>
+            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+ <!-- Script tags for vendor JavaScript files -->
+<script src="{{ url_for('static', filename='vendor/purecounter/purecounter_vanilla.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/aos/aos.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/glightbox/js/glightbox.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendor/php-email-form/validate.js') }}"></script>
+
+
+  <!-- Template Main JS File -->
+ <!-- Script tag for the JavaScript file -->
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+
+</body>
+
+</html>

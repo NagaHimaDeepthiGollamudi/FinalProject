@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soil Health Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .dashboard {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            padding: 20px;
+            width: 250px;
+            text-align: center;
+        }
+
+        .card h2 {
+            color: #4CAF50;
+        }
+
+        .card p {
+            margin: 10px 0;
+        }
+
+        .recommendation {
+            font-weight: bold;
+            color: #FF5722;
+        }
+
+        .graph-section {
+            width: 40%;
+            height: 20%;
+            margin-left: 8%;
+            margin-bottom: 20px;
+        }
+
+        .graph-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .recommendation-section {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .recommendation-section h2 {
+            color: #4CAF50;
+        }
+
+        .manure-images {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .manure-images img {
+            width: 300px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #777;
+        }
+
+    </style>
+</head>
+<body onload="speakContent()">
+    <header>
+        <h1>Soil Health Dashboard</h1>
+    </header>
+
+    <main>
+        <div class="dashboard">
+            <div class="card">
+                <h2><i class="fas fa-water"></i> Soil Moisture</h2>
+                <p id="moisture-value">{{ soil_moisture_list[-1] }}</p>
+                <p class="recommendation">Recommendation: Increase watering.</p>
+            </div>
+            <div class="card">
+                <h2><i class="fas fa-leaf"></i> Nitrogen</h2>
+                <p id="nitrogen-value">{{ nitrogen_list[-1] }} mg/kg</p>
+                <p class="recommendation">Recommendation: Apply nitrogen-rich manure.</p>
+            </div>
+            <div class="card">
+                <h2><i class="fas fa-leaf"></i> Potassium</h2>
+                <p id="potassium-value">{{ potassium_list[-1] }} mg/kg</p>
+                <p class="recommendation">Recommendation: Use potassium fertilizer.</p>
+            </div>
+            <div class="card">
+                <h2><i class="fas fa-leaf"></i> Phosphorus</h2>
+                <p id="phosphorus-value">{{ phosphorus_list[-1] }} mg/kg</p>
+                <p class="recommendation">Recommendation: Apply phosphate manure.</p>
+            </div>
+        </div>
+
+        <div class="graph-section">
+            <h2>Soil Health Graphs</h2>
+            <div class="graph-grid">
+                <canvas id="moistureChart" width="400" height="270"></canvas>
+                <canvas id="nitrogenChart" width="400" height="270"></canvas>
+                <canvas id="phosphorusChart" width="400" height="270"></canvas>
+                <canvas id="potassiumChart" width="400" height="270"></canvas>
+            </div>
+        </div>
+
+        <div class="recommendation-section">
+            <h2>Manure Recommendations</h2>
+            <div class="manure-images">
+                <img src="https://agricompost.qa/wp-content/uploads/2021/04/Vermi.jpg" alt="Manure Recommendation 1">
+                <img src="https://5.imimg.com/data5/FF/BS/MY-64990343/cow-dung-manure-500x500.png" alt="Manure Recommendation 2">
+            </div>
+        </div>
+
+        <div class="recommendation-section">
+            <h2>Treatment Steps</h2>
+            <p><strong>Treatment Steps:</strong></p>
+            <ul>
+                <li>Test soil regularly for nutrient levels.</li>
+                <li>Implement crop rotation for better soil health.</li>
+                <li>Apply organic matter to improve soil structure.</li>
+            </ul>
+        </div>
+
+        <footer>
+            <p>© 2024 Soil Health Monitoring System</p>
+        </footer>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <script>
+        // Function to create each graph
+        function createGraph(ctx, label, data) {
+            return new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5'],
+                    datasets: [{
+                        label: label,
+                        data: data,
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 2,
+                        fill: false
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Value'
+                            }
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Time'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Get the data passed from Flask
+        const soilMoistureData = {{ soil_moisture_list | tojson }};
+        const nitrogenData = {{ nitrogen_list | tojson }};
+        const phosphorusData = {{ phosphorus_list | tojson }};
+        const potassiumData = {{ potassium_list | tojson }};
+
+        // Create charts for moisture, nitrogen, phosphorus, and potassium
+        const moistureCtx = document.getElementById('moistureChart').getContext('2d');
+        const nitrogenCtx = document.getElementById('nitrogenChart').getContext('2d');
+        const phosphorusCtx = document.getElementById('phosphorusChart').getContext('2d');
+        const potassiumCtx = document.getElementById('potassiumChart').getContext('2d');
+
+        createGraph(moistureCtx, 'Soil Moisture', soilMoistureData);
+        createGraph(nitrogenCtx, 'Nitrogen Levels', nitrogenData);
+        createGraph(phosphorusCtx, 'Phosphorus Levels', phosphorusData);
+        createGraph(potassiumCtx, 'Potassium Levels', potassiumData);
+
+        // Voice explanation function using Web Speech API
+        function speakContent() {
+            const message = `
+                ఈ డాష్‌బోర్డ్‌లో మీ నేల ఆరోగ్యాన్ని సమీక్షించేందుకు ముఖ్యమైన సమాచారం ఉంది. 
+                నేల తేమ స్థాయి, నైట్రోజన్, పొటాషియం, ఫాస్పరస్ స్థాయిలు చూపిస్తున్నాం. 
+                నీరు పెంచడం, పోషకాలు అందించడం వంటి సిఫార్సులు అందుబాటులో ఉన్నాయి.
+                చార్ట్‌ల ద్వారా మీరు వివిధ పదార్థాల స్థాయులను సులభంగా అర్థం చేసుకోగలరు. 
+                విర్మి కంపోస్ట్ మరియు పశువుల పేడను మీ పొలం కోసం వాడాలని సూచించాం.
+            `;
+            const speech = new SpeechSynthesisUtterance(message);
+            speech.lang = 'te-IN';  // Telugu language
+            speech.pitch = 1;
+            speech.rate = 1;
+            speech.volume = 100;
+
+            window.speechSynthesis.speak(speech);
+        }
+
+        // Automatically call speakContent when the page loads
+        window.addEventListener('load', function() {
+            setTimeout(speakContent, 500); // Delay to allow for full page load
+        });
+    </script>
+</body>
+</html>
